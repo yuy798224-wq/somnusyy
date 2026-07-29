@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+:root {
+  --blue: #3268e8;
+  --ink: #15233a;
+  --paper: #f3f0e7;
+  --acid: #f4f451;
+  --pink: #f46eb6;
+  --coral: #ff7058;
+  --silver: #dce2e7;
+  --line: rgba(21, 35, 58, .28);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+main { overflow: hidden; }
+.section { padding: 100px 5vw; }
+
+.nav {
+  height: 76px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between;
+  position: absolute; inset: 0 0 auto; z-index: 20; border-bottom: 1px solid var(--line);
+}
+.brand { font: 900 21px/1 Arial, sans-serif; letter-spacing: -.08em; }
+.brand span { color: var(--blue); }
+.navLinks { display: flex; align-items: center; gap: 25px; font: 700 11px/1 Arial, sans-serif; letter-spacing: .04em; }
+.navLinks a { position: relative; }
+.navLinks a:not(.navCta)::after { content: ""; height: 2px; background: var(--pink); position: absolute; left: 0; right: 100%; bottom: -5px; transition: right .2s; }
+.navLinks a:hover::after { right: 0; }
+.navCta { padding: 11px 16px; border: 1px solid; border-radius: 999px; background: var(--acid); box-shadow: 3px 3px 0 var(--ink); }
+
+.hero { min-height: 850px; padding: 120px 5vw 76px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 5vw; align-items: center; position: relative; background: var(--paper); }
+.hero::before { content: ""; position: absolute; width: 420px; height: 420px; right: -90px; top: 42px; border: 1px solid; border-radius: 50%; background: var(--acid); opacity: .88; }
+.hero::after { content: ""; position: absolute; width: 55%; height: 1px; left: 22%; top: 42%; background: var(--ink); transform: rotate(-15deg); opacity: .35; }
+.heroMeta { position: absolute; top: 92px; left: 5vw; right: 5vw; display: flex; justify-content: space-between; font: 700 9px/1 monospace; letter-spacing: .12em; }
+.heroCopy { position: relative; z-index: 3; }
+.kicker { display: inline-block; margin: 0 0 22px; padding: 7px 10px; background: var(--blue); color: white; font: 700 10px/1 monospace; letter-spacing: .13em; transform: rotate(-1deg); }
+.kicker i { color: var(--acid); font-style: normal; }
+.hero h1, .aboutTitle p, .projectsIntro h2, .experienceHead h2, .notesHead h2, .lifeHead h2, .footerHello {
+  font-family: Georgia, "Songti SC", "SimSun", serif; font-weight: 500;
+}
+.hero h1 { margin: 0; font-size: clamp(70px, 8.4vw, 126px); line-height: .79; letter-spacing: -.085em; }
+.hero h1 em { color: var(--blue); font-style: italic; text-decoration: underline; text-decoration-thickness: 4px; text-decoration-color: var(--pink); }
+.heroIntro { max-width: 580px; margin: 38px 0 30px; font-size: 16px; line-height: 1.9; }
+.heroIntro strong { font-weight: 700; background: linear-gradient(transparent 66%, var(--acid) 0); }
+.heroActions { display: flex; align-items: center; gap: 24px; }
+.primaryButton { display: inline-flex; align-items: center; gap: 25px; padding: 15px 18px; color: white; background: var(--ink); font: 700 11px/1 monospace; box-shadow: 5px 5px 0 var(--pink); transition: transform .2s; }
+.primaryButton:hover { transform: translate(-2px, -2px); }
+.textLink { font: 700 11px/1 monospace; border-bottom: 1px solid; padding-bottom: 5px; }
+.heroVisual { position: relative; z-index: 4; width: min(390px, 32vw); justify-self: center; background: #e8e8e8; border: 2px solid var(--ink); box-shadow: 15px 15px 0 var(--blue); transform: rotate(2deg); }
+.windowBar { height: 31px; padding: 0 9px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--ink); background: var(--silver); font: 700 9px/1 monospace; }
+.heroVisual > img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 46%; filter: contrast(1.03) saturate(.88); }
+.sticker { position: absolute; padding: 9px 12px; border: 1px solid var(--ink); font: 800 10px/1.2 Arial, sans-serif; box-shadow: 3px 3px 0 var(--ink); }
+.stickerOne { left: -40px; top: 23%; background: var(--acid); transform: rotate(-8deg); }
+.stickerTwo { right: -44px; bottom: 11%; color: white; background: var(--pink); transform: rotate(7deg); }
+.stickerThree { right: -20px; top: -45px; border: 0; box-shadow: none; background: transparent; color: var(--coral); font-size: 58px; }
+.ticker { position: absolute; z-index: 5; bottom: 0; left: 0; right: 0; height: 42px; overflow: hidden; background: var(--blue); color: white; border-block: 1px solid var(--ink); }
+.ticker div { width: max-content; font: 700 12px/42px monospace; letter-spacing: .08em; animation: ticker 25s linear infinite; }
+@keyframes ticker { to { transform: translateX(-40%); } }
+
+.sectionTop { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid; }
+.sectionLabel, .fileTag { font: 700 10px/1 monospace; letter-spacing: .13em; }
+.fileTag { padding: 7px 10px; background: var(--acid); border: 1px solid; box-shadow: 2px 2px 0; }
+.about { background: var(--ink); color: var(--paper); }
+.about .sectionTop { border-color: #617087; }
+.about .fileTag { color: var(--ink); }
+.aboutGrid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 9vw; margin: 70px 0; }
+.aboutTitle p { margin: 0; color: var(--acid); font-size: clamp(56px, 7.5vw, 105px); line-height: .9; letter-spacing: -.065em; font-style: italic; }
+.aboutTitle h2 { margin: 40px 0 0; font: 500 25px/1.6 "Songti SC", Georgia, serif; }
+.aboutCopy { font-size: 14px; line-height: 2; color: #c5ccd5; }
+.aboutCopy p { margin: 0 0 20px; }
+.aboutCopy .english { color: white; font: 500 20px/1.65 Georgia, serif; }
+.traitBoard { display: flex; flex-wrap: wrap; gap: 10px; }
+.traitBoard span { padding: 10px 13px; border: 1px solid #78869b; border-radius: 999px; font: 700 10px/1 monospace; }
+.traitBoard span:nth-child(2n) { background: var(--blue); border-color: var(--blue); }
+.traitBoard span:nth-child(3n) { color: var(--ink); background: var(--pink); border-color: var(--pink); transform: rotate(-2deg); }
+
+.projects { background: var(--blue); color: white; }
+.sectionTop.light .fileTag { color: var(--ink); }
+.projectsIntro, .notesHead, .lifeHead { display: grid; grid-template-columns: 1.3fr .7fr; gap: 8vw; align-items: end; margin: 55px 0 65px; }
+.projectsIntro h2, .notesHead h2, .lifeHead h2 { margin: 0; font-size: clamp(55px, 7vw, 98px); line-height: .9; letter-spacing: -.06em; }
+.projectsIntro p, .notesHead p, .lifeHead p { margin: 0; font-size: 14px; line-height: 1.8; }
+.projectGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.projectCard { min-height: 580px; padding: 30px; border: 2px solid var(--ink); color: var(--ink); box-shadow: 7px 7px 0 var(--ink); }
+.projectCard.blue { background: #bcd2ff; }
+.projectCard.pink { background: var(--pink); transform: translateY(35px); }
+.projectCard.acid { background: var(--acid); }
+.projectCard.paper { background: var(--paper); transform: translateY(35px); }
+.projectTop { display: flex; justify-content: space-between; font: 700 9px/1 monospace; letter-spacing: .1em; }
+.projectCard h3 { margin: 48px 0 8px; font: 500 clamp(34px, 4vw, 55px)/.98 Georgia, serif; letter-spacing: -.04em; }
+.projectCard h4 { margin: 0 0 24px; font-size: 16px; }
+.projectIntro { min-height: 55px; padding-bottom: 25px; border-bottom: 1px solid; font: 600 15px/1.7 "Songti SC", Georgia, serif; }
+.projectDetails { display: grid; gap: 14px; margin-top: 23px; }
+.projectDetails b { font: 700 9px/1 monospace; letter-spacing: .08em; }
+.projectDetails p { margin: 5px 0 0; font-size: 12px; line-height: 1.75; }
+.skillLine { margin: 25px 0 0; padding: 9px; background: var(--ink); color: white; font: 700 9px/1.4 monospace; text-transform: uppercase; }
+
+.experience { padding-top: 135px; }
+.experienceHead { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; align-items: end; margin: 65px 0; }
+.experienceHead h2 { margin: 0; font-size: clamp(55px, 7vw, 95px); line-height: .9; letter-spacing: -.06em; }
+.experienceHead p { font-size: 14px; line-height: 1.8; }
+.timeline { border-top: 2px solid; }
+.timeline article { display: grid; grid-template-columns: 65px 220px 1fr; gap: 30px; padding: 35px 0; border-bottom: 1px solid; }
+.timelineIndex { color: var(--blue); font: italic 26px/1 Georgia, serif; }
+.timelineDate b, .timelineDate span { display: block; font: 700 10px/1.5 monospace; }
+.timelineDate span { margin-top: 9px; color: #687382; font-size: 8px; letter-spacing: .08em; }
+.timelineMain h3 { margin: 0; font: 700 28px/1 Arial, sans-serif; letter-spacing: -.04em; }
+.timelineMain h4 { margin: 7px 0 15px; color: var(--blue); font-size: 13px; }
+.timelineMain p { max-width: 750px; margin: 0 0 16px; font-size: 13px; line-height: 1.8; }
+.timelineMain strong { display: inline-block; padding: 7px 9px; background: var(--acid); font-size: 11px; line-height: 1.5; }
+.educationStrip { margin-top: 50px; padding: 25px; background: var(--silver); border: 1px solid; display: grid; grid-template-columns: 180px 1fr 1fr; gap: 25px; box-shadow: 5px 5px 0 var(--ink); font-size: 11px; line-height: 1.6; }
+.educationStrip span { font: 700 10px/1 monospace; }
+.educationStrip p { margin: 0; }
+
+.notes { background: #dedcd5; }
+.notesGrid { min-height: 540px; display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: 50px auto 40px; }
+.note { padding: 26px; border: 1px solid; box-shadow: 7px 7px 0 var(--ink); }
+.note > span { font: 700 9px/1 monospace; }
+.note h3 { margin: 38px 0 8px; font: italic 34px/1.05 Georgia, serif; }
+.note h4 { margin: 0 0 20px; font-size: 15px; }
+.note p { font-size: 12px; line-height: 1.8; }
+.note a { display: inline-block; margin-top: 18px; padding-bottom: 3px; border-bottom: 1px solid; font: 700 9px/1 monospace; }
+.note1 { grid-column: 1 / 6; grid-row: 1 / 3; background: var(--acid); transform: rotate(-1.5deg); }
+.note2 { grid-column: 5 / 10; grid-row: 2 / 4; z-index: 2; color: white; background: var(--blue); transform: rotate(1deg); }
+.note3 { grid-column: 9 / 13; grid-row: 1 / 3; background: var(--pink); transform: rotate(-2deg); }
+
+.life { min-height: 1100px; color: white; background: var(--ink); }
+.lifeHead { margin-bottom: 90px; }
+.photoCollage { position: relative; height: 970px; max-width: 1200px; margin: 0 auto; }
+.photo { position: absolute; padding: 10px 10px 42px; background: var(--paper); color: var(--ink); border: 1px solid var(--paper); box-shadow: 10px 10px 0 var(--blue); transition: transform .25s, z-index 0s; }
+.photo:hover { z-index: 10; transform: rotate(0) scale(1.025); }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo span { position: absolute; left: 12px; right: 12px; bottom: 9px; font: 500 9px/1.35 monospace; }
+.photo span b { color: var(--blue); }
+.photoTravel { width: 36%; height: 570px; left: 1%; top: 65px; transform: rotate(-4deg); }
+.photoHike { width: 34%; height: 580px; left: 35%; top: 0; transform: rotate(2deg); box-shadow: 10px 10px 0 var(--pink); }
+.photoFashion { width: 35%; height: 590px; right: 0; top: 105px; transform: rotate(4deg); box-shadow: 10px 10px 0 var(--acid); }
+.musicCard { position: absolute; left: 12%; bottom: 20px; width: 330px; padding: 23px; color: var(--ink); background: var(--acid); border: 2px solid var(--paper); box-shadow: 8px 8px 0 var(--pink); transform: rotate(3deg); }
+.musicCard > span, .musicCard small { font: 700 9px/1 monospace; }
+.musicCard div { float: right; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid; border-radius: 50%; }
+.musicCard p { margin: 25px 0; font: 900 35px/.9 Arial, sans-serif; letter-spacing: -.05em; }
+.lifeScribble { position: absolute; right: 12%; bottom: 75px; color: var(--pink); font: italic 30px/1.2 Georgia, serif; transform: rotate(-7deg); }
+
+footer { padding: 90px 5vw 30px; background: var(--pink); color: var(--ink); }
+.footerStatus { display: flex; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid; font: 700 9px/1 monospace; }
+.footerStatus span:last-child { color: #125b2c; }
+.footerHello { margin: 65px 0 30px; font-size: clamp(64px, 9vw, 130px); line-height: .82; letter-spacing: -.075em; }
+.footerHello em { color: var(--paper); font-style: italic; }
+.footerCn { max-width: 580px; margin: 0 0 55px; font-size: 15px; line-height: 1.8; }
+footer > a { display: flex; justify-content: space-between; padding: 20px 0; border-block: 2px solid; font: 700 clamp(20px, 3vw, 36px)/1 Arial, sans-serif; }
+.contactChips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.contactChips span { padding: 8px 11px; border: 1px solid; border-radius: 999px; font: 700 9px/1 monospace; background: var(--paper); }
+.footerBottom { margin-top: 80px; display: flex; justify-content: space-between; font: 700 9px/1 monospace; }
+.footerBottom a { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  .nav { height: 66px; padding: 0 20px; }
+  .navLinks { max-width: 70%; overflow-x: auto; gap: 18px; scrollbar-width: none; }
+  .navLinks a:nth-child(3), .navLinks a:nth-child(4), .navLinks a:nth-child(5) { display: none; }
+  .navCta { white-space: nowrap; }
+  .section { padding: 75px 20px; }
+  .hero { min-height: auto; padding: 105px 20px 78px; grid-template-columns: 1fr; gap: 48px; }
+  .heroMeta { top: 76px; left: 20px; right: 20px; }
+  .heroMeta span:nth-child(2) { display: none; }
+  .hero h1 { font-size: clamp(62px, 21vw, 88px); line-height: .84; }
+  .heroIntro { font-size: 14px; }
+  .heroActions { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .heroVisual { width: min(310px, 82vw); margin-bottom: 25px; }
+  .stickerOne { left: -18px; }
+  .stickerTwo { right: -16px; }
+  .aboutGrid, .projectsIntro, .experienceHead, .notesHead, .lifeHead { grid-template-columns: 1fr; gap: 35px; }
+  .aboutTitle p, .projectsIntro h2, .experienceHead h2, .notesHead h2, .lifeHead h2 { font-size: 58px; }
+  .aboutCopy .english { font-size: 18px; }
+  .projectGrid { grid-template-columns: 1fr; gap: 16px; }
+  .projectCard, .projectCard.pink, .projectCard.paper { min-height: auto; transform: none; padding: 23px; }
+  .projectCard h3 { margin-top: 38px; font-size: 40px; }
+  .experience { padding-top: 80px; }
+  .timeline article { grid-template-columns: 45px 1fr; gap: 15px; }
+  .timelineDate { grid-column: 2; }
+  .timelineMain { grid-column: 2; }
+  .timelineMain h3 { font-size: 23px; }
+  .educationStrip { grid-template-columns: 1fr; }
+  .notesGrid { display: grid; min-height: auto; grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
+  .note1, .note2, .note3 { grid-column: auto; grid-row: auto; transform: none; }
+  .life { min-height: auto; }
+  .lifeHead { margin-bottom: 55px; }
+  .photoCollage { height: auto; display: grid; gap: 28px; }
+  .photo, .photoTravel, .photoHike, .photoFashion { position: relative; inset: auto; width: 92%; height: auto; aspect-ratio: 3/4; transform: none; }
+  .photo:nth-child(2) { margin-left: 8%; }
+  .photo:nth-child(3) { margin-left: 3%; }
+  .musicCard, .lifeScribble { position: relative; inset: auto; width: 90%; margin: 15px auto; }
+  .lifeScribble { text-align: center; }
+  .footerHello { font-size: 63px; }
+  .footerBottom { flex-wrap: wrap; gap: 22px; line-height: 1.4; }
+}
+
+@media (max-width: 440px) {
+  .navLinks a:not(.navCta) { display: none; }
+  .hero h1 { font-size: 60px; }
+  .heroMeta span:last-child { display: none; }
+  .hero::before { width: 300px; height: 300px; }
+  .projectCard h3 { font-size: 34px; }
+  .sectionTop .fileTag { display: none; }
+  .timeline article { grid-template-columns: 32px 1fr; }
+  .footerHello { font-size: 54px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
