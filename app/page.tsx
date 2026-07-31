@@ -153,7 +153,11 @@ export default function Home() {
         </div>
         <div className="heroCopy">
           <p className="kicker">HELLO, I&apos;M YUYING <i>●</i></p>
-          <h1>Between<br /><em>cultures</em><br />& possibilities.</h1>
+          <h1 className="heroTitle" aria-label="Between cultures and possibilities">
+            <span className="titleLine titleLineOne">Between</span>
+            <span className="titleLine titleLineTwo"><em>cultures</em></span>
+            <span className="titleLine titleLineThree">&amp; possibilities.</span>
+          </h1>
           <p className="heroIntro">
             我在不同文化、城市与人之间，寻找值得被连接的东西。
             对 <strong>AI、产品、韩流趋势和新鲜事物</strong> 永远多问一句：还能怎么玩？
@@ -171,6 +175,7 @@ export default function Home() {
           <span className="sticker stickerThree">✦</span>
         </div>
         <img className="y2kAsset heroPhone" src="/decor/y2k-phone-earbuds.webp" alt="" aria-hidden="true" />
+        <span className="heroCursor" aria-hidden="true">➤</span>
         <div className="ticker" aria-label="我的关键词">
           <div>AI ✦ PRODUCT ✦ KOREAN CULTURE ✦ FASHION ✦ PEOPLE ✦ TRAVEL ✦ MAKE THINGS HAPPEN ✦&nbsp;</div>
         </div>
@@ -287,11 +292,28 @@ export default function Home() {
           <p className="sectionLabel">04 / NOTES</p>
           <span className="fileTag">RECENTLY THINKING ABOUT...</span>
         </div>
-        <div className="notesHead">
-          <h2>Things I notice.</h2>
-          <p>一些关于文化、产品、趋势和创造力的短想法。<br />它们仍在生长，也欢迎被讨论。</p>
+        <div className="notesComputer">
+          <div className="computerTitlebar">
+            <span className="computerIcon">✦</span>
+            <b>YUYING_NOTES.EXE</b>
+            <div aria-hidden="true"><span>—</span><span>□</span><span>×</span></div>
+          </div>
+          <div className="computerMenu"><span>File</span><span>Edit</span><span>View</span><span>Favorites</span><span>Help</span></div>
+          <div className="computerAddress"><b>Address</b><span>⌕ C:\YUYING\THOUGHTS\RECENT</span><i>GO</i></div>
+          <div className="computerScreen">
+            <div className="desktopIcons" aria-hidden="true">
+              <span><i>▣</i>ideas.txt</span>
+              <span><i>◉</i>culture.lab</span>
+              <span><i>✦</i>new_things</span>
+            </div>
+            <div className="notesHead">
+              <h2>Things I notice.</h2>
+              <p>一些关于文化、产品、趋势和创造力的短想法。<br />它们仍在生长，也欢迎被讨论。</p>
+            </div>
+            <DraggableNotes notes={notes} />
+          </div>
+          <div className="computerStatus"><span>3 object(s)</span><span>MY BRAIN IS ONLINE ●</span></div>
         </div>
-        <DraggableNotes notes={notes} />
       </section>
 
       <section className="life section" id="life">
