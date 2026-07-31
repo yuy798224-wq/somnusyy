@@ -1,4 +1,5 @@
 import DraggableNotes from "@/components/DraggableNotes";
+import DigitalAvatar from "@/components/DigitalAvatar";
 
 function SystemWidget({ className = "" }: { className?: string }) {
   return (
@@ -146,6 +147,7 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="scanBeam" aria-hidden="true" />
         <ChromeBubbles className="heroBubbles" />
+        <div className="heroTechStars" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i></div>
         <div className="heroMeta">
           <span>PERSONAL CYBER SPACE</span>
           <span>SEOUL ↔ CHINA</span>
@@ -261,6 +263,7 @@ export default function Home() {
       <section className="experience section" id="experience">
         <img className="y2kAsset experiencePhone" src="/decor/y2k-phone-earbuds.webp" alt="" aria-hidden="true" loading="lazy" />
         <div className="cableLine" aria-hidden="true"><span>DATA IN MOTION</span></div>
+        <div className="experienceStars" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>✧</i></div>
         <div className="sectionTop">
           <p className="sectionLabel">03 / EXPERIENCE</p>
           <span className="fileTag">VIEW: TIMELINE.MODE</span>
@@ -269,7 +272,7 @@ export default function Home() {
           <h2>From one world<br />to another.</h2>
           <p>每段经历都让我换一个角度理解人、市场与组织。<br />它们没有把我定型，反而让我越来越擅长进入新环境。</p>
         </div>
-        <div className="timeline">
+        <div className="timeline hangingTimeline">
           {experiences.map((item, index) => (
             <article key={item.company}>
               <div className="timelineIndex">{String(index + 1).padStart(2, "0")}</div>
@@ -288,6 +291,7 @@ export default function Home() {
           <p><b>KYUNG HEE UNIVERSITY</b> · MPA 行政学硕士 · 2024—2026</p>
           <p><b>GACHON UNIVERSITY</b> · 韩国语文学学士 · 2022—2024</p>
         </div>
+        <DigitalAvatar />
       </section>
 
       <section className="notes section" id="notes">
