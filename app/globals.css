@@ -239,6 +239,9 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
 
 @media (max-width: 860px) {
   body::before { opacity: .07; }
+  .heroBubbles, .aboutWidget, .aboutOrbit, .projectBubbles, .pixelCursor,
+  .experiencePhone, .cableLine, .notesWidget, .notesBubbles, .lifeCdPlayer,
+  .lifeOrbit, .footerBubbles { display: none; }
   .nav { height: 66px; padding: 0 20px; }
   .navLinks { max-width: 70%; overflow-x: auto; gap: 18px; scrollbar-width: none; }
   .navLinks a:nth-child(3), .navLinks a:nth-child(4), .navLinks a:nth-child(5) { display: none; }
@@ -252,22 +255,15 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .heroActions { align-items: flex-start; flex-direction: column; gap: 18px; }
   .heroVisual { width: min(310px, 82vw); margin-bottom: 25px; }
   .heroPhone { width: 175px; right: -52px; bottom: 34px; opacity: .9; }
-  .heroBubbles { left: -55px; top: 43%; transform: scale(.72); }
   .stickerOne { left: -18px; }
   .stickerTwo { right: -16px; }
   .aboutGrid, .projectsIntro, .experienceHead, .notesHead, .lifeHead { grid-template-columns: 1fr; gap: 35px; }
   .aboutTitle p, .projectsIntro h2, .experienceHead h2, .notesHead h2, .lifeHead h2 { font-size: 58px; }
   .aboutCopy .english { font-size: 18px; }
-  .aboutWidget { right: -55px; top: 21%; transform: scale(.75); opacity: .72; }
-  .aboutOrbit { display: none; }
   .projectGrid { grid-template-columns: 1fr; gap: 16px; }
-  .projectBubbles { right: -95px; top: 210px; opacity: .6; }
-  .pixelCursor { left: auto; right: 17px; top: 220px; transform: scale(.8) rotate(-8deg); }
   .projectCard, .projectCard.pink, .projectCard.paper { min-height: auto; transform: none; padding: 23px; }
   .projectCard h3 { margin-top: 38px; font-size: 40px; }
   .experience { padding-top: 80px; }
-  .experiencePhone { width: 130px; right: -55px; top: 250px; opacity: .45; }
-  .cableLine { display: none; }
   .timeline article { grid-template-columns: 45px 1fr; gap: 15px; }
   .timelineDate { grid-column: 2; }
   .timelineMain { grid-column: 2; }
@@ -275,8 +271,6 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .educationStrip { grid-template-columns: 1fr; }
   .dragHint { margin: -12px 0 25px; }
   .notesGrid { display: grid; min-height: auto; gap: 16px; }
-  .notesWidget { display: none; }
-  .notesBubbles { opacity: .35; }
   .note { position: relative; inset: auto; width: auto; min-height: auto; cursor: default; touch-action: auto; user-select: text; }
   .note1, .note2, .note3 { transform: none; }
   .life { min-height: auto; }
@@ -286,12 +280,9 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .photo:nth-child(2) { margin-left: 8%; }
   .photo:nth-child(3) { margin-left: 3%; }
   .musicCard, .lifeScribble { position: relative; inset: auto; width: 90%; margin: 15px auto; }
-  .lifeCdPlayer { width: 230px; right: -90px; bottom: 170px; opacity: .64; }
-  .lifeOrbit { display: none; }
   .lifeScribble { text-align: center; }
   .footerHello { font-size: 63px; }
   .footerWidget { position: relative; inset: auto; width: 210px; margin: 36px 0 0 auto; }
-  .footerBubbles { opacity: .4; }
   .footerBottom { flex-wrap: wrap; gap: 22px; line-height: 1.4; }
 }
 
@@ -301,8 +292,6 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .heroMeta span:last-child { display: none; }
   .hero::before { width: 300px; height: 300px; }
   .heroPhone { width: 135px; right: -45px; bottom: 55px; }
-  .heroBubbles, .projectBubbles, .notesBubbles, .footerBubbles { display: none; }
-  .aboutWidget, .experiencePhone { display: none; }
   .projectCard h3 { font-size: 34px; }
   .sectionTop .fileTag { display: none; }
   .timeline article { grid-template-columns: 32px 1fr; }
