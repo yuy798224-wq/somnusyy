@@ -377,6 +377,26 @@ export default function Home() {
           </a>
           <div className="lifeTaskbar" aria-hidden="true"><span>✦ START</span><b>4 WINDOWS OPEN</b><i>15:47 · ♫</i></div>
         </div>
+        <div className="previousPhotos">
+          <div className="previousPhotosHead">
+            <span>PREVIOUS_PHOTO_DUMP / 原有生活相册</span>
+            <i>3 FILES RESTORED</i>
+          </div>
+          <div className="previousPhotosGrid">
+            <a href="/photos/singapore.webp" target="_blank" rel="noreferrer">
+              <img src="/photos/singapore.webp" alt="于滢在新加坡鱼尾狮公园旅行" loading="lazy" />
+              <span><b>01 / CITY WALK</b> Singapore · 热带天气和一场说走就走</span>
+            </a>
+            <a href="/photos/hiking-seoul.webp" target="_blank" rel="noreferrer">
+              <img src="/photos/hiking-seoul.webp" alt="于滢在首尔登山徒步" loading="lazy" />
+              <span><b>02 / HIKING</b> Seoul · 山路让我把脑子里的标签页关掉</span>
+            </a>
+            <a href="/photos/tokyo-city.webp" target="_blank" rel="noreferrer">
+              <img src="/photos/tokyo-city.webp" alt="于滢在城市高处的时尚造型摄影" loading="lazy" />
+              <span><b>03 / STYLE FILE</b> Tokyo · 城市、造型和追星训练出的审美雷达</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <footer id="contact">
