@@ -182,7 +182,6 @@ export default function Home() {
       </section>
 
       <section className="about section" id="about">
-        <SystemWidget className="aboutWidget" />
         <span className="orbitRing aboutOrbit" aria-hidden="true"><i>✦</i></span>
         <div className="sectionTop">
           <p className="sectionLabel">01 / ABOUT ME</p>
@@ -191,7 +190,13 @@ export default function Home() {
         <div className="aboutGrid">
           <div className="aboutTitle">
             <p>I&apos;m curious<br />on purpose.</p>
-            <h2>我对世界的兴趣，<br />从来不只停留在“看看”。</h2>
+            <h2>
+              我对世界的兴趣，<br />
+              <span className="lookMoment">从来不只停留在“看看”。
+                <img src="/decor/y2k-binoculars.webp" alt="" aria-hidden="true" />
+              </span>
+            </h2>
+            <SystemWidget className="aboutWidget" />
           </div>
           <div className="aboutCopy">
             <p className="english">

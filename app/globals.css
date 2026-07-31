@@ -136,8 +136,16 @@ main { overflow: hidden; }
 .fileTag { padding: 7px 10px; background: var(--acid); border: 1px solid; box-shadow: 2px 2px 0; }
 .about { background: var(--ink); color: var(--paper); }
 .about::before { content: ""; position: absolute; z-index: 0; inset: 0; opacity: .25; background: radial-gradient(circle at 87% 17%, var(--blue), transparent 21%), radial-gradient(circle at 12% 88%, var(--pink), transparent 18%); }
-.aboutWidget { right: 4vw; top: 42%; }
+.aboutTitle { min-width: 0; }
+.aboutTitle .aboutWidget { position: relative; inset: auto; width: 218px; margin: 46px 6px 0 auto; color: var(--ink); }
+.lookMoment { position: relative; display: inline-block; }
+.lookMoment img { position: absolute; z-index: 3; width: 145px; max-width: none; right: -142px; top: 50%; transform: translateY(-48%) rotate(-8deg); filter: drop-shadow(0 12px 15px rgba(0,0,0,.32)); pointer-events: none; animation: binocularFocus 5s ease-in-out infinite; }
 .aboutOrbit { right: -80px; top: 17%; color: var(--aqua); }
+@keyframes binocularFocus {
+  0%,100% { transform: translateY(-48%) rotate(-8deg) scale(1); }
+  46% { transform: translateY(-55%) rotate(-2deg) scale(1.07); filter: drop-shadow(0 16px 18px rgba(0,0,0,.38)) hue-rotate(0); }
+  52% { transform: translateY(-55%) rotate(-2deg) scale(.98); filter: drop-shadow(0 9px 13px rgba(0,0,0,.3)) hue-rotate(24deg); }
+}
 .about .sectionTop { border-color: #617087; }
 .about .fileTag { color: var(--ink); }
 .aboutGrid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 9vw; margin: 70px 0; }
@@ -333,6 +341,7 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .aboutGrid, .projectsIntro, .experienceHead, .notesHead, .lifeHead { grid-template-columns: 1fr; gap: 35px; }
   .aboutTitle p, .projectsIntro h2, .experienceHead h2, .notesHead h2, .lifeHead h2 { font-size: 58px; }
   .aboutCopy .english { font-size: 18px; }
+  .lookMoment img { width: 110px; right: -90px; opacity: .9; }
   .projectGrid { grid-template-columns: 1fr; gap: 16px; }
   .projectCard, .projectCard.pink, .projectCard.paper { min-height: auto; transform: none; padding: 23px; }
   .projectCard h3 { margin-top: 38px; font-size: 40px; }
@@ -388,6 +397,8 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .heroMeta span:last-child { display: none; }
   .hero::before { width: 300px; height: 300px; }
   .heroPhone { width: 135px; right: -45px; bottom: 55px; }
+  .lookMoment { padding-right: 62px; }
+  .lookMoment img { width: 83px; right: -5px; top: 62%; }
   .projectCard h3 { font-size: 34px; }
   .sectionTop .fileTag { display: none; }
   .computerMenu { gap: 11px; font-size: 9px; }
