@@ -1,3 +1,5 @@
+import DraggableNotes from "@/components/DraggableNotes";
+
 const projects = [
   {
     id: "01",
@@ -257,17 +259,7 @@ export default function Home() {
           <h2>Things I notice.</h2>
           <p>一些关于文化、产品、趋势和创造力的短想法。<br />它们仍在生长，也欢迎被讨论。</p>
         </div>
-        <div className="notesGrid">
-          {notes.map((note, index) => (
-            <article key={note.date} className={`note note${index + 1}`}>
-              <span>{note.date}</span>
-              <h3>{note.title}</h3>
-              <h4>{note.cn}</h4>
-              <p>{note.text}</p>
-              <a href={`mailto:yuyingkorea@163.com?subject=想聊聊：${encodeURIComponent(note.cn)}`}>TALK ABOUT THIS ↗</a>
-            </article>
-          ))}
-        </div>
+        <DraggableNotes notes={notes} />
       </section>
 
       <section className="life section" id="life">
@@ -292,12 +284,19 @@ export default function Home() {
             <img src="/photos/tokyo-city.webp" alt="于滢在城市高处的时尚造型摄影" loading="lazy" />
             <span><b>03 / STYLE FILE</b> Tokyo · 城市、造型和追星训练出的审美雷达</span>
           </a>
-          <div className="musicCard">
-            <span>NOW PLAYING</span>
-            <div>▶</div>
-            <p>K-POP<br />FASHION<br />CULTURE</p>
-            <small>repeat all ↻</small>
-          </div>
+          <a
+            className="musicCard"
+            href="https://c6.y.qq.com/base/fcgi-bin/u?__=9sROiVJ8HGzv"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="在 QQ 音乐收听 RESCENE 的 Pretty Girl"
+          >
+            <span>NOW PLAYING · QQ MUSIC</span>
+            <div className="musicPlay" aria-hidden="true">▶</div>
+            <div className="musicDisc" aria-hidden="true"><i /></div>
+            <p><b>PRETTY GIRL</b><br /><em>RESCENE · 리센느</em></p>
+            <small>OPEN TO LISTEN ↗</small>
+          </a>
           <p className="lifeScribble">collect moments,<br />not just milestones ✦</p>
         </div>
       </section>
