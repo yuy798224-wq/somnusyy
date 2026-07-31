@@ -241,16 +241,30 @@ main { overflow: hidden; }
 .lifeOrbit { left: 3vw; top: 20%; color: var(--pink); }
 @keyframes cdHover { 0%,100% { transform: rotate(-7deg) translateY(0); } 50% { transform: rotate(-1deg) translateY(-22px); } }
 .lifeHead { margin-bottom: 90px; }
-.photoCollage { position: relative; height: 970px; max-width: 1200px; margin: 0 auto; }
-.photo { position: absolute; padding: 10px 10px 42px; background: var(--paper); color: var(--ink); border: 1px solid var(--paper); box-shadow: 10px 10px 0 var(--blue); transition: transform .25s, z-index 0s; }
-.photo:hover { z-index: 10; transform: rotate(0) scale(1.025); }
-.photo img { width: 100%; height: 100%; object-fit: cover; }
-.photo span { position: absolute; left: 12px; right: 12px; bottom: 9px; font: 500 9px/1.35 monospace; }
-.photo span b { color: var(--blue); }
-.photoTravel { width: 36%; height: 570px; left: 1%; top: 65px; transform: rotate(-4deg); }
-.photoHike { width: 34%; height: 580px; left: 35%; top: 0; transform: rotate(2deg); box-shadow: 10px 10px 0 var(--pink); }
-.photoFashion { width: 35%; height: 590px; right: 0; top: 105px; transform: rotate(4deg); box-shadow: 10px 10px 0 var(--acid); }
-.musicCard { position: absolute; left: 12%; bottom: 20px; width: 350px; min-height: 218px; padding: 23px; color: var(--ink); background: var(--acid); border: 2px solid var(--paper); box-shadow: 8px 8px 0 var(--pink); transform: rotate(3deg); transition: transform .2s, box-shadow .2s; }
+.lifeDesktop { position: relative; height: 1080px; max-width: 1260px; margin: 0 auto; border: 3px solid #d8e4ff; border-radius: 9px 9px 0 0; overflow: hidden; background: linear-gradient(rgba(50,104,232,.16), rgba(16,25,43,.12)), radial-gradient(circle at 49% 36%, rgba(255,255,255,.7), transparent 14%), linear-gradient(#69bdf2 0 60%, #48a342 61% 100%); box-shadow: 16px 18px 0 rgba(50,104,232,.55); }
+.lifeDesktop::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 61%, rgba(255,255,255,.9) 0 4%, transparent 5%), radial-gradient(ellipse at 67% 62%, rgba(255,255,255,.7) 0 3%, transparent 4%), linear-gradient(12deg, transparent 65%, rgba(255,255,255,.16) 66% 67%, transparent 68%); opacity: .35; }
+.lifeDesktopIcons { position: absolute; z-index: 2; left: 18px; top: 24px; display: grid; gap: 22px; }
+.lifeDesktopIcons span { width: 62px; display: grid; gap: 5px; justify-items: center; color: white; font: 700 7px/1.2 monospace; text-align: center; text-shadow: 1px 1px 2px #000; }
+.lifeDesktopIcons i { width: 38px; height: 38px; display: grid; place-items: center; color: var(--acid); background: linear-gradient(145deg,#6ed8ff,#174db0); border: 1px solid white; border-radius: 5px; box-shadow: 2px 3px 0 rgba(21,35,58,.6); font: normal 20px/1 Arial,sans-serif; text-shadow: none; }
+.lifeWindow { position: absolute; z-index: 3; display: grid; grid-template-rows: 32px 1fr auto; color: var(--ink); background: #ecebe4; border: 2px solid #154db3; border-radius: 7px 7px 2px 2px; overflow: hidden; box-shadow: 9px 11px 0 rgba(21,35,58,.58); transition: transform .25s, z-index 0s; animation: windowOpen .75s cubic-bezier(.18,.8,.23,1) both; }
+.lifeWindow:hover { z-index: 10; transform: translateY(-7px) scale(1.015); }
+.lifeWindowBar { padding: 0 6px 0 10px; display: flex; align-items: center; justify-content: space-between; color: white; background: linear-gradient(90deg,#1554c4,#5aa6f3); border-bottom: 2px solid #15408b; font: 700 8px/1 monospace; letter-spacing: .04em; }
+.lifeWindowBar i { font-style: normal; letter-spacing: .18em; }
+.lifeWindow > img { width: 100%; height: 100%; min-height: 0; object-fit: cover; background: #cad3df; }
+.lifeWindowCaption { padding: 11px 13px 13px; display: block; background: rgba(244,244,239,.96); border-top: 1px solid #818b96; font: 500 9px/1.55 "PingFang SC", Arial, sans-serif; }
+.lifeWindowCaption b, .lifeWindowCaption em { display: block; font: 800 9px/1.4 monospace; }
+.lifeWindowCaption b { margin-bottom: 4px; color: var(--blue); }
+.lifeWindowCaption em { margin-top: 7px; color: #d51d74; font-style: normal; text-decoration: underline; }
+.animeWindow { width: 30%; height: 665px; left: 7.5%; top: 75px; animation-delay: .05s; }
+.animeWindow > img { object-position: center top; }
+.skiWindow { width: 29%; height: 610px; left: 35%; top: 175px; animation-delay: .18s; }
+.skiWindow > img { object-position: center 25%; }
+.glideWindow { width: 37%; height: 405px; right: 5%; top: 40px; animation-delay: .31s; }
+.glideWindow > img { object-position: center 52%; }
+.moonWindow { width: 29%; height: 560px; right: 7%; top: 460px; animation-delay: .44s; }
+.moonWindow > img { object-position: center 34%; }
+@keyframes windowOpen { from { opacity: 0; transform: translate(45px,35px) scale(.72); filter: blur(7px); } to { opacity: 1; transform: translate(0,0) scale(1); filter: blur(0); } }
+.musicCard { position: absolute; z-index: 8; left: 7%; bottom: 58px; width: 340px; min-height: 200px; padding: 23px; color: var(--ink); background: var(--acid); border: 2px solid var(--paper); box-shadow: 8px 8px 0 var(--pink); transform: rotate(2deg); transition: transform .2s, box-shadow .2s; }
 .musicCard:hover { transform: rotate(0) translateY(-5px); box-shadow: 12px 14px 0 var(--pink); }
 .musicCard > span, .musicCard small { font: 700 9px/1 monospace; }
 .musicCard .musicPlay { position: relative; z-index: 2; float: right; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid; border-radius: 50%; background: var(--paper); transition: transform .2s, background .2s; }
@@ -262,7 +276,10 @@ main { overflow: hidden; }
 .musicCard p b { font-size: 31px; line-height: .9; }
 .musicCard p em { display: inline-block; margin-top: 8px; font: italic 14px/1.2 Georgia, serif; letter-spacing: 0; }
 @keyframes recordSpin { to { transform: rotate(360deg); } }
-.lifeScribble { position: absolute; right: 12%; bottom: 75px; color: var(--pink); font: italic 30px/1.2 Georgia, serif; transform: rotate(-7deg); }
+.lifeTaskbar { position: absolute; z-index: 12; left: 0; right: 0; bottom: 0; height: 39px; padding-right: 14px; display: grid; grid-template-columns: 115px 1fr auto; align-items: center; color: white; background: linear-gradient(#3279df,#1648b6); border-top: 2px solid rgba(255,255,255,.75); font: 700 8px/1 monospace; }
+.lifeTaskbar span { align-self: stretch; padding-left: 13px; display: flex; align-items: center; background: linear-gradient(#52ba55,#237b28); border-radius: 0 14px 14px 0; font-size: 10px; }
+.lifeTaskbar b { margin-left: 12px; width: max-content; padding: 8px 18px; background: rgba(0,43,132,.45); border: 1px solid rgba(255,255,255,.25); }
+.lifeTaskbar i { font-style: normal; }
 
 footer { padding: 90px 5vw 30px; position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(circle at 80% 20%, rgba(191,234,255,.8), transparent 22%), var(--pink); color: var(--ink); }
 footer > *:not(.systemWidget, .chromeBubbles) { position: relative; z-index: 2; }
@@ -331,12 +348,16 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .note1, .note2, .note3 { transform: none; }
   .life { min-height: auto; }
   .lifeHead { margin-bottom: 55px; }
-  .photoCollage { height: auto; display: grid; gap: 28px; }
-  .photo, .photoTravel, .photoHike, .photoFashion { position: relative; inset: auto; width: 92%; height: auto; aspect-ratio: 3/4; transform: none; }
-  .photo:nth-child(2) { margin-left: 8%; }
-  .photo:nth-child(3) { margin-left: 3%; }
-  .musicCard, .lifeScribble { position: relative; inset: auto; width: 90%; margin: 15px auto; }
-  .lifeScribble { text-align: center; }
+  .lifeDesktop { height: auto; padding: 70px 14px 72px; display: grid; gap: 22px; overflow: hidden; box-shadow: 8px 9px 0 rgba(50,104,232,.55); }
+  .lifeDesktopIcons { top: 15px; left: 14px; display: flex; gap: 12px; }
+  .lifeDesktopIcons span { width: 46px; font-size: 6px; }
+  .lifeDesktopIcons i { width: 28px; height: 28px; font-size: 14px; }
+  .lifeWindow, .animeWindow, .skiWindow, .glideWindow, .moonWindow { position: relative; inset: auto; width: 100%; height: auto; min-height: 0; }
+  .lifeWindow > img { height: auto; max-height: 610px; aspect-ratio: 4/5; object-fit: cover; }
+  .glideWindow > img { aspect-ratio: 4/3; }
+  .musicCard { position: relative; inset: auto; width: 94%; margin: 6px auto 0; }
+  .lifeTaskbar { grid-template-columns: 95px 1fr auto; }
+  .lifeTaskbar b { display: none; }
   .footerHello { font-size: 63px; }
   .footerWidget { position: relative; inset: auto; width: 210px; margin: 36px 0 0 auto; }
   .footerBottom { flex-wrap: wrap; gap: 22px; line-height: 1.4; }

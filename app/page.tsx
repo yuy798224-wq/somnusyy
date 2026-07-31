@@ -321,25 +321,47 @@ export default function Home() {
         <span className="orbitRing lifeOrbit" aria-hidden="true"><i>♪</i></span>
         <div className="sectionTop light">
           <p className="sectionLabel">05 / OFFLINE MODE</p>
-          <span className="fileTag">PHOTO DUMP · 3 ITEMS</span>
+          <span className="fileTag">LIFE_ARCHIVE · 4 STORIES</span>
         </div>
         <div className="lifeHead">
           <h2>Outside the tabs,<br />I&apos;m still exploring.</h2>
-          <p>登山、徒步、旅行、摄影和 K-pop。<br />我喜欢用身体进入一座城市，也喜欢用镜头保存它。</p>
+          <p>追星、滑雪、滑翔伞，以及那些意想不到的相遇。<br />生活不是简历的留白，也是我理解世界的另一种方式。</p>
         </div>
-        <div className="photoCollage">
-          <a className="photo photoTravel" href="/photos/singapore.webp" target="_blank" rel="noreferrer">
-            <img src="/photos/singapore.webp" alt="于滢在新加坡鱼尾狮公园旅行" loading="lazy" />
-            <span><b>01 / CITY WALK</b> Singapore · 热带天气和一场说走就走</span>
+        <div className="lifeDesktop">
+          <div className="lifeDesktopIcons" aria-hidden="true">
+            <span><i>▣</i>MY LIFE</span>
+            <span><i>♡</i>FANDOM</span>
+            <span><i>☁</i>OUTSIDE</span>
+          </div>
+
+          <a className="lifeWindow animeWindow" href="https://v.douyin.com/tUyZ95ekElM/" target="_blank" rel="noreferrer">
+            <span className="lifeWindowBar"><b>01_FANDOM_UNLOCK.jpg</b><i>— □ ×</i></span>
+            <img src="/photos/anime-pop-up.webp" alt="于滢在守护甜心十周年快闪店打卡" loading="lazy" />
+            <span className="lifeWindowCaption">
+              <b>MY HEART, UNLOCK! 🔐</b>
+              守护甜心十周年快闪店打卡。一次古早追星，也意外成为了 10W+ 点赞的内容实验。
+              <em>OPEN ON DOUYIN ↗</em>
+            </span>
           </a>
-          <a className="photo photoHike" href="/photos/hiking-seoul.webp" target="_blank" rel="noreferrer">
-            <img src="/photos/hiking-seoul.webp" alt="于滢在首尔登山徒步" loading="lazy" />
-            <span><b>02 / HIKING</b> Seoul · 山路让我把脑子里的标签页关掉</span>
+
+          <a className="lifeWindow skiWindow" href="/photos/ski-day.webp" target="_blank" rel="noreferrer">
+            <span className="lifeWindowBar"><b>02_SNOW_MODE.jpg</b><i>— □ ×</i></span>
+            <img src="/photos/ski-day.webp" alt="于滢的日常滑雪照片" loading="lazy" />
+            <span className="lifeWindowCaption"><b>SNOW MODE / 滑雪日常</b>在雪地里练习控制，也练习大胆地往前走。</span>
           </a>
-          <a className="photo photoFashion" href="/photos/tokyo-city.webp" target="_blank" rel="noreferrer">
-            <img src="/photos/tokyo-city.webp" alt="于滢在城市高处的时尚造型摄影" loading="lazy" />
-            <span><b>03 / STYLE FILE</b> Tokyo · 城市、造型和追星训练出的审美雷达</span>
+
+          <a className="lifeWindow glideWindow" href="/photos/paragliding.webp" target="_blank" rel="noreferrer">
+            <span className="lifeWindowBar"><b>03_TOUCH_THE_SKY.jpg</b><i>— □ ×</i></span>
+            <img src="/photos/paragliding.webp" alt="于滢体验滑翔伞" loading="lazy" />
+            <span className="lifeWindowCaption"><b>TOUCH THE SKY / 滑翔伞</b>有些新鲜事物，最好的理解方式就是亲自起飞。</span>
           </a>
+
+          <a className="lifeWindow moonWindow" href="/photos/moon-jae-in.webp" target="_blank" rel="noreferrer">
+            <span className="lifeWindowBar"><b>04_A_SPECIAL_MEETING.jpg</b><i>— □ ×</i></span>
+            <img src="/photos/moon-jae-in.webp" alt="于滢与韩国前总统文在寅先生合影" loading="lazy" />
+            <span className="lifeWindowCaption"><b>A SPECIAL MEETING / 特别的相遇</b>与韩国前总统文在寅先生合影。跨文化生活里，一次难忘的现实彩蛋。</span>
+          </a>
+
           <a
             className="musicCard"
             href="https://c6.y.qq.com/base/fcgi-bin/u?__=9sROiVJ8HGzv"
@@ -353,7 +375,7 @@ export default function Home() {
             <p><b>PRETTY GIRL</b><br /><em>RESCENE · 리센느</em></p>
             <small>OPEN TO LISTEN ↗</small>
           </a>
-          <p className="lifeScribble">collect moments,<br />not just milestones ✦</p>
+          <div className="lifeTaskbar" aria-hidden="true"><span>✦ START</span><b>4 WINDOWS OPEN</b><i>15:47 · ♫</i></div>
         </div>
       </section>
 
