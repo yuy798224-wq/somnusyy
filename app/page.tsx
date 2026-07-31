@@ -1,5 +1,6 @@
 import DraggableNotes from "@/components/DraggableNotes";
 import DigitalAvatar from "@/components/DigitalAvatar";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 function SystemWidget({ className = "" }: { className?: string }) {
   return (
@@ -132,6 +133,7 @@ const notes = [
 export default function Home() {
   return (
     <main>
+      <BackgroundMusic />
       <nav className="nav" aria-label="主导航">
         <a className="brand" href="#top" aria-label="回到首页">YUYING<span>.ZIP</span></a>
         <div className="navLinks">
@@ -148,6 +150,11 @@ export default function Home() {
         <div className="scanBeam" aria-hidden="true" />
         <ChromeBubbles className="heroBubbles" />
         <div className="heroTechStars" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i></div>
+        <div className="heroGlobeWindow" aria-hidden="true">
+          <span className="globeWindowBar">WORLD_VIEW.EXE <i>— □ ×</i></span>
+          <span className="wireGlobe"><i /><i /><i /><i /></span>
+          <b>CONNECTING CULTURES...</b>
+        </div>
         <div className="heroMeta">
           <span>PERSONAL CYBER SPACE</span>
           <span>SEOUL ↔ CHINA</span>
@@ -170,8 +177,13 @@ export default function Home() {
           </div>
         </div>
         <div className="heroVisual">
-          <div className="windowBar"><span>yuying_portrait.jpg</span><span>— □ ×</span></div>
-          <img src="/photos/hero-yuying.webp" alt="于滢在首尔街头的生活照" fetchPriority="high" />
+          <div className="windowBar"><span>yuying_blueprint.jpg</span><span>— □ ×</span></div>
+          <img src="/photos/hero-yuying-blue-v2.webp" alt="于滢的蓝调 Y2K 半色调肖像" fetchPriority="high" />
+          <span className="portraitCrop cropEyes" aria-hidden="true"><img src="/photos/hero-yuying-blue-v2.webp" alt="" /></span>
+          <span className="portraitCrop cropFace" aria-hidden="true"><img src="/photos/hero-yuying-blue-v2.webp" alt="" /></span>
+          <span className="portraitCrop cropDress" aria-hidden="true"><img src="/photos/hero-yuying-blue-v2.webp" alt="" /></span>
+          <span className="portraitLine lineOne" aria-hidden="true" />
+          <span className="portraitLine lineTwo" aria-hidden="true" />
           <span className="sticker stickerOne">CURIOUS<br />BY DEFAULT</span>
           <span className="sticker stickerTwo">THIS IS<br />YUYING :)</span>
           <span className="sticker stickerThree">✦</span>
