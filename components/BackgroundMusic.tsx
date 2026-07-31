@@ -24,6 +24,17 @@ export default function BackgroundMusic() {
 
     void tryPlay();
 
+    const retryOnReady = () => {
+      if (audio.paused) void tryPlay();
+    };
+    const retryWhenVisible = () => {
+      if (document.visibilityState === "visible" && audio.paused) void tryPlay();
+    };
+    audio.addEventListener("canplay", retryOnReady, { once: true });
+    window.addEventListener("pageshow", retryOnReady, { once: true });
+    window.addEventListener("focus", retryOnReady, { once: true });
+    document.addEventListener("visibilitychange", retryWhenVisible);
+
     const unlock = () => {
       if (audio.paused) void tryPlay();
       window.removeEventListener("pointerdown", unlock);
@@ -33,6 +44,10 @@ export default function BackgroundMusic() {
     window.addEventListener("keydown", unlock, { once: true });
 
     return () => {
+      audio.removeEventListener("canplay", retryOnReady);
+      window.removeEventListener("pageshow", retryOnReady);
+      window.removeEventListener("focus", retryOnReady);
+      document.removeEventListener("visibilitychange", retryWhenVisible);
       window.removeEventListener("pointerdown", unlock);
       window.removeEventListener("keydown", unlock);
     };
@@ -62,6 +77,7 @@ export default function BackgroundMusic() {
         src="/audio/landing-theme.mp3"
         autoPlay
         loop
+        playsInline
         preload="auto"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}

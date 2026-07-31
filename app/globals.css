@@ -66,18 +66,18 @@ main { overflow: hidden; }
 
 .nav {
   height: 76px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between;
-  position: absolute; inset: 0 0 auto; z-index: 20; border-bottom: 1px solid var(--line);
+  position: absolute; inset: 0 0 auto; z-index: 20; border-bottom: 1px solid var(--line); background: rgba(246,240,223,.86); backdrop-filter: blur(8px);
 }
-.brand { font: 900 21px/1 Arial, sans-serif; letter-spacing: -.08em; }
+.brand { padding: 5px 7px; font: 900 24px/1 Arial, sans-serif; letter-spacing: -.08em; background: rgba(255,255,255,.68); border-left: 4px solid var(--blue); }
 .brand span { color: var(--blue); }
-.navLinks { display: flex; align-items: center; gap: 25px; font: 700 11px/1 Arial, sans-serif; letter-spacing: .04em; }
+.navLinks { display: flex; align-items: center; gap: 25px; font: 800 13px/1 Arial, sans-serif; letter-spacing: .025em; }
 .navLinks a { position: relative; }
 .navLinks a:not(.navCta)::after { content: ""; height: 2px; background: var(--pink); position: absolute; left: 0; right: 100%; bottom: -5px; transition: right .2s; }
 .navLinks a:hover::after { right: 0; }
 .navCta { padding: 11px 16px; border: 1px solid; border-radius: 999px; background: var(--acid); box-shadow: 3px 3px 0 var(--ink); }
 
 .hero { min-height: 850px; padding: 120px 5vw 76px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 5vw; align-items: center; position: relative; isolation: isolate; background-color: var(--paper); background-image: radial-gradient(#1556e8 1px, transparent 1.5px), linear-gradient(90deg, rgba(21,86,232,.055) 1px, transparent 1px), linear-gradient(rgba(21,86,232,.055) 1px, transparent 1px); background-size: 9px 9px, 54px 54px, 54px 54px; }
-.hero::before { content: ""; position: absolute; z-index: 0; width: 45vw; height: 45vw; max-width: 670px; max-height: 670px; left: -22vw; top: 70px; border-radius: 50%; background: var(--blue); box-shadow: inset -35px -25px 0 rgba(7,28,72,.28); opacity: .95; }
+.hero::before { display: none; }
 .hero::after { content: ""; position: absolute; width: 55%; height: 1px; left: 22%; top: 42%; background: var(--ink); transform: rotate(-15deg); opacity: .35; }
 .scanBeam { position: absolute; z-index: 2; top: 0; bottom: 42px; width: 9vw; opacity: .35; transform: skewX(-15deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent); animation: scanPage 7s linear infinite; pointer-events: none; }
 .heroPhone { width: clamp(190px, 21vw, 330px); right: -4.5vw; bottom: 25px; transform: rotate(14deg); animation: phoneFloat 6s ease-in-out infinite; }
@@ -102,7 +102,8 @@ main { overflow: hidden; }
 .wireGlobe i:nth-child(1) { left: 26%; top: 25%; }.wireGlobe i:nth-child(2) { right: 28%; top: 44%; animation-delay: -.6s; }.wireGlobe i:nth-child(3) { left: 38%; bottom: 25%; animation-delay: -1.1s; }.wireGlobe i:nth-child(4) { right: 13%; bottom: 34%; animation-delay: -1.5s; }
 .heroGlobeWindow > b { position: absolute; left: 16px; bottom: 15px; font: 700 8px/1 monospace; letter-spacing: .1em; }
 @keyframes wireSpin { to { transform: rotate(360deg); filter: hue-rotate(18deg); } }
-.heroMeta { position: absolute; top: 92px; left: 5vw; right: 5vw; display: flex; justify-content: space-between; font: 700 9px/1 monospace; letter-spacing: .12em; }
+.heroMeta { position: absolute; top: 92px; left: 5vw; right: 5vw; display: flex; justify-content: space-between; font: 800 11px/1 monospace; letter-spacing: .12em; }
+.heroMeta span { padding: 5px 7px; background: rgba(246,240,223,.88); border-bottom: 2px solid var(--blue); box-shadow: 3px 3px 0 rgba(21,86,232,.14); }
 .heroCopy { position: relative; z-index: 3; }
 .kicker { display: inline-block; margin: 0 0 22px; padding: 7px 10px; background: var(--blue); color: white; font: 700 10px/1 monospace; letter-spacing: .13em; transform: rotate(-1deg); }
 .kicker i { color: var(--acid); font-style: normal; }
@@ -132,7 +133,7 @@ main { overflow: hidden; }
   76% { left: 48%; top: 69%; opacity: 1; }
   87%, 100% { left: 58%; top: 84%; opacity: 0; }
 }
-.heroIntro { max-width: 580px; margin: 38px 0 30px; font-size: 16px; line-height: 1.9; }
+.heroIntro { max-width: 620px; margin: 38px 0 30px; padding: 13px 16px; font-size: 18px; font-weight: 650; line-height: 1.85; background: rgba(246,240,223,.87); border-left: 5px solid var(--blue); box-shadow: 7px 7px 0 rgba(21,86,232,.12); text-wrap: pretty; }
 .heroIntro strong { font-weight: 700; background: linear-gradient(transparent 66%, var(--acid) 0); }
 .heroActions { display: flex; align-items: center; gap: 24px; }
 .primaryButton { display: inline-flex; align-items: center; gap: 25px; padding: 15px 18px; color: white; background: var(--ink); font: 700 11px/1 monospace; box-shadow: 5px 5px 0 var(--pink); transition: transform .2s; }
@@ -390,6 +391,7 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .experiencePhone, .cableLine, .notesWidget, .notesBubbles, .lifeCdPlayer,
   .lifeOrbit, .footerBubbles { display: none; }
   .nav { height: 66px; padding: 0 20px; }
+  .brand { font-size: 20px; }
   .navLinks { max-width: 70%; overflow-x: auto; gap: 18px; scrollbar-width: none; }
   .navLinks a:nth-child(3), .navLinks a:nth-child(4), .navLinks a:nth-child(5) { display: none; }
   .navCta { white-space: nowrap; }
@@ -402,7 +404,7 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .hero h1 { font-size: clamp(62px, 21vw, 88px); line-height: .84; }
   .heroTitle .titleLine { width: 100%; }
   .heroCursor { display: none; }
-  .heroIntro { font-size: 14px; }
+  .heroIntro { padding: 12px 13px; font-size: 15px; line-height: 1.8; }
   .heroActions { align-items: flex-start; flex-direction: column; gap: 18px; }
   .heroVisual { width: min(310px, 82vw); margin-bottom: 25px; }
   .cropEyes { left: -11%; }.cropFace { right: -9%; }.cropDress { left: -8%; }
@@ -472,7 +474,6 @@ footer > a { display: flex; justify-content: space-between; padding: 20px 0; bor
   .hero h1 { font-size: 60px; }
   .heroTitle .titleLineThree { font-size: 50px; }
   .heroMeta span:last-child { display: none; }
-  .hero::before { width: 300px; height: 300px; left: -210px; }
   .heroGlobeWindow { right: -125px; }
   .heroTechStars i:nth-child(1), .heroTechStars i:nth-child(4) { display: none; }
   .heroPhone { width: 135px; right: -45px; bottom: 55px; }
