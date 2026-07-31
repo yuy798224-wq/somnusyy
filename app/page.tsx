@@ -1,5 +1,26 @@
 import DraggableNotes from "@/components/DraggableNotes";
 
+function SystemWidget({ className = "" }: { className?: string }) {
+  return (
+    <div className={`systemWidget ${className}`} aria-hidden="true">
+      <div className="systemWidgetBar"><span>Y2K_OS.exe</span><span>— □ ×</span></div>
+      <div className="systemWidgetBody">
+        <span className="statusOrb" />
+        <div><b>SIGNAL FOUND</b><small>curiosity is online</small></div>
+        <i /><i /><i /><i />
+      </div>
+    </div>
+  );
+}
+
+function ChromeBubbles({ className = "" }: { className?: string }) {
+  return (
+    <div className={`chromeBubbles ${className}`} aria-hidden="true">
+      <i /><i /><i /><i />
+    </div>
+  );
+}
+
 const projects = [
   {
     id: "01",
@@ -123,6 +144,8 @@ export default function Home() {
       </nav>
 
       <section className="hero" id="top">
+        <div className="scanBeam" aria-hidden="true" />
+        <ChromeBubbles className="heroBubbles" />
         <div className="heroMeta">
           <span>PERSONAL CYBER SPACE</span>
           <span>SEOUL ↔ CHINA</span>
@@ -147,12 +170,15 @@ export default function Home() {
           <span className="sticker stickerTwo">THIS IS<br />YUYING :)</span>
           <span className="sticker stickerThree">✦</span>
         </div>
+        <img className="y2kAsset heroPhone" src="/decor/y2k-phone-earbuds.webp" alt="" aria-hidden="true" />
         <div className="ticker" aria-label="我的关键词">
           <div>AI ✦ PRODUCT ✦ KOREAN CULTURE ✦ FASHION ✦ PEOPLE ✦ TRAVEL ✦ MAKE THINGS HAPPEN ✦&nbsp;</div>
         </div>
       </section>
 
       <section className="about section" id="about">
+        <SystemWidget className="aboutWidget" />
+        <span className="orbitRing aboutOrbit" aria-hidden="true"><i>✦</i></span>
         <div className="sectionTop">
           <p className="sectionLabel">01 / ABOUT ME</p>
           <span className="fileTag">OPEN: WHO_AM_I.TXT</span>
@@ -192,6 +218,8 @@ export default function Home() {
       </section>
 
       <section className="projects section" id="projects">
+        <ChromeBubbles className="projectBubbles" />
+        <div className="pixelCursor" aria-hidden="true">↖</div>
         <div className="sectionTop light">
           <p className="sectionLabel">02 / SELECTED PROJECTS</p>
           <span className="fileTag">4 CASE FILES</span>
@@ -221,6 +249,8 @@ export default function Home() {
       </section>
 
       <section className="experience section" id="experience">
+        <img className="y2kAsset experiencePhone" src="/decor/y2k-phone-earbuds.webp" alt="" aria-hidden="true" loading="lazy" />
+        <div className="cableLine" aria-hidden="true"><span>DATA IN MOTION</span></div>
         <div className="sectionTop">
           <p className="sectionLabel">03 / EXPERIENCE</p>
           <span className="fileTag">VIEW: TIMELINE.MODE</span>
@@ -251,6 +281,8 @@ export default function Home() {
       </section>
 
       <section className="notes section" id="notes">
+        <SystemWidget className="notesWidget" />
+        <ChromeBubbles className="notesBubbles" />
         <div className="sectionTop">
           <p className="sectionLabel">04 / NOTES</p>
           <span className="fileTag">RECENTLY THINKING ABOUT...</span>
@@ -263,6 +295,8 @@ export default function Home() {
       </section>
 
       <section className="life section" id="life">
+        <img className="y2kAsset lifeCdPlayer" src="/decor/y2k-cd-player.webp" alt="" aria-hidden="true" loading="lazy" />
+        <span className="orbitRing lifeOrbit" aria-hidden="true"><i>♪</i></span>
         <div className="sectionTop light">
           <p className="sectionLabel">05 / OFFLINE MODE</p>
           <span className="fileTag">PHOTO DUMP · 3 ITEMS</span>
@@ -302,6 +336,8 @@ export default function Home() {
       </section>
 
       <footer id="contact">
+        <SystemWidget className="footerWidget" />
+        <ChromeBubbles className="footerBubbles" />
         <div className="footerStatus"><span>06 / CONTACT</span><span>STATUS: OPEN TO POSSIBILITIES ●</span></div>
         <p className="footerHello">Have an idea,<br />a role, or just<br /><em>something curious?</em></p>
         <p className="footerCn">如果你正在寻找一个能理解文化差异、捕捉趋势，也愿意把细节做实的人，我们应该聊聊。</p>
