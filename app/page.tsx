@@ -1,3 +1,4 @@
+import ProductExperience from "@/components/ProductExperience";
 import DraggableNotes from "@/components/DraggableNotes";
 import DigitalAvatar from "@/components/DigitalAvatar";
 import BackgroundMusic from "@/components/BackgroundMusic";
@@ -138,10 +139,10 @@ export default function Home() {
         <a className="brand" href="#top" aria-label="回到首页">YUYING<span>.ZIP</span></a>
         <div className="navLinks">
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#notes">Notes</a>
-          <a href="#life">Life</a>
+          <a href="#product">Product</a>
+          
+          
+          
           <a className="navCta" href="#contact">Say hi ↗</a>
         </div>
       </nav>
@@ -172,16 +173,13 @@ export default function Home() {
             对 <strong>AI、产品、韩流趋势和新鲜事物</strong> 永远多问一句：还能怎么玩？
           </p>
           <div className="heroActions">
-            <a className="primaryButton" href="#projects">ENTER MY WORLD <span>↓</span></a>
+            <a className="primaryButton" href="#product">ENTER MY WORLD <span>↓</span></a>
             <a className="textLink" href="mailto:yuyingkorea@163.com">WORK WITH ME ↗</a>
           </div>
         </div>
         <div className="heroVisual">
           <div className="windowBar"><span>yuying_blueprint.jpg</span><span>— □ ×</span></div>
-          <img src="/photos/hero-yuying-blue-v2.webp" alt="于滢的蓝调 Y2K 半色调肖像" fetchPriority="high" />
-          <span className="portraitCrop cropEyes" aria-hidden="true"><img src="/photos/hero-yuying-blue-v2.webp" alt="" /></span>
-          <span className="portraitCrop cropFace" aria-hidden="true"><img src="/photos/hero-yuying-blue-v2.webp" alt="" /></span>
-          <span className="portraitCrop cropDress" aria-hidden="true"><img src="/photos/hero-yuying-blue-v2.webp" alt="" /></span>
+          <img src="/photos/anime-yuying.webp" alt="于滢的蓝白色动漫形象" fetchPriority="high" />
           <span className="portraitLine lineOne" aria-hidden="true" />
           <span className="portraitLine lineTwo" aria-hidden="true" />
           <span className="sticker stickerOne">CURIOUS<br />BY DEFAULT</span>
@@ -195,7 +193,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about section" id="about">
+      <ProductExperience />
+      <div className="personalArchive" id="about">
+      <section className="about section">
         <span className="orbitRing aboutOrbit" aria-hidden="true"><i>✦</i></span>
         <div className="sectionTop">
           <p className="sectionLabel">01 / ABOUT ME</p>
@@ -342,11 +342,11 @@ export default function Home() {
         <span className="orbitRing lifeOrbit" aria-hidden="true"><i>♪</i></span>
         <div className="sectionTop light">
           <p className="sectionLabel">05 / OFFLINE MODE</p>
-          <span className="fileTag">LIFE_ARCHIVE · 4 STORIES</span>
+          <span className="fileTag">LIFE_ARCHIVE · 3 STORIES</span>
         </div>
         <div className="lifeHead">
           <h2>Outside the tabs,<br />I&apos;m still exploring.</h2>
-          <p>追星、滑雪、滑翔伞，以及那些意想不到的相遇。<br />生活不是简历的留白，也是我理解世界的另一种方式。</p>
+          <p>追星、滑雪、滑翔伞。<br />生活不是简历的留白，也是我理解世界的另一种方式。</p>
         </div>
         <div className="lifeDesktop">
           <div className="lifeDesktopIcons" aria-hidden="true">
@@ -377,13 +377,7 @@ export default function Home() {
             <span className="lifeWindowCaption"><b>TOUCH THE SKY / 滑翔伞</b>有些新鲜事物，最好的理解方式就是亲自起飞。</span>
           </a>
 
-          <a className="lifeWindow moonWindow" href="/photos/moon-jae-in.webp" target="_blank" rel="noreferrer">
-            <span className="lifeWindowBar"><b>04_A_SPECIAL_MEETING.jpg</b><i>— □ ×</i></span>
-            <img src="/photos/moon-jae-in.webp" alt="于滢与韩国前总统文在寅先生合影" loading="lazy" />
-            <span className="lifeWindowCaption"><b>A SPECIAL MEETING / 特别的相遇</b>与韩国前总统文在寅先生合影。跨文化生活里，一次难忘的现实彩蛋。</span>
-          </a>
-
-          <a
+<a
             className="musicCard"
             href="https://c6.y.qq.com/base/fcgi-bin/u?__=9sROiVJ8HGzv"
             target="_blank"
@@ -396,30 +390,12 @@ export default function Home() {
             <p><b>PRETTY GIRL</b><br /><em>RESCENE · 리센느</em></p>
             <small>OPEN TO LISTEN ↗</small>
           </a>
-          <div className="lifeTaskbar" aria-hidden="true"><span>✦ START</span><b>4 WINDOWS OPEN</b><i>15:47 · ♫</i></div>
+          <div className="lifeTaskbar" aria-hidden="true"><span>✦ START</span><b>3 WINDOWS OPEN</b><i>15:47 · ♫</i></div>
         </div>
-        <div className="previousPhotos">
-          <div className="previousPhotosHead">
-            <span>PREVIOUS_PHOTO_DUMP / 原有生活相册</span>
-            <i>3 FILES RESTORED</i>
-          </div>
-          <div className="previousPhotosGrid">
-            <a href="/photos/singapore.webp" target="_blank" rel="noreferrer">
-              <img src="/photos/singapore.webp" alt="于滢在新加坡鱼尾狮公园旅行" loading="lazy" />
-              <span><b>01 / CITY WALK</b> Singapore · 热带天气和一场说走就走</span>
-            </a>
-            <a href="/photos/hiking-seoul.webp" target="_blank" rel="noreferrer">
-              <img src="/photos/hiking-seoul.webp" alt="于滢在首尔登山徒步" loading="lazy" />
-              <span><b>02 / HIKING</b> Seoul · 山路让我把脑子里的标签页关掉</span>
-            </a>
-            <a href="/photos/tokyo-city.webp" target="_blank" rel="noreferrer">
-              <img src="/photos/tokyo-city.webp" alt="于滢在城市高处的时尚造型摄影" loading="lazy" />
-              <span><b>03 / STYLE FILE</b> Tokyo · 城市、造型和追星训练出的审美雷达</span>
-            </a>
-          </div>
-        </div>
+
       </section>
 
+      </div>
       <footer id="contact">
         <SystemWidget className="footerWidget" />
         <ChromeBubbles className="footerBubbles" />
